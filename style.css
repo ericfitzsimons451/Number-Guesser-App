@@ -1,3 +1,53 @@
+body {
+  text-align: center;
+  background-color: #bde0fe;
+}
+
+h1 {
+  background-color: #ffafcc;
+  border-radius: 15px;
+  font-size: 3.3rem;
+  margin: 20px auto;
+  padding: 20px;
+  vertical-align: middle;
+  width: 800px;
+}
+
+h2,
+.response {
+  font-size: 2rem;
+}
+
+main {
+  background: #cdb4db;
+  border-radius: 15px;
+  display: flex;
+  margin: 0px auto;
+  width: 800px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  height: 30px;
+  width: 350px;
+  margin-bottom: 40px;
+}
+
+button {
+  height: 30px;
+}
+
+.recent-guess-label {
+  font-size: 2.4rem;
+  margin-bottom: 0;
+}
+
+.recent-guess {
+  font-size: 4rem;
+}
+
 .hidden {
  visibility: hidden;
 }
