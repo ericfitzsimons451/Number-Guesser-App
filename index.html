@@ -12,13 +12,15 @@
         <span class="lower-range">1</span> and
         <span class="upper-range">100</span>!
       </h2>
-      <h3 class="recent-guess">XX</h3>
+      <h3 class="hidden recent-guess-label">Your last guess was</h3>
+      <h3 class="hidden recent-guess">--</h3>
       <form>
         <input type="text"
           class="guess-input"
           placeholder="What's your guess?"
-          required>
+          >
         <button disabled type="submit" class="submit">Submit</button>
+        <button disabled type="submit" class="reset">Reset</button>
       </form>
       <h3 class="response"></h3>
     </main>

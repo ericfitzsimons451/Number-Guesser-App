@@ -1,9 +1,11 @@
 var guessInput = document.querySelector('.guess-input')
 var submitButton = document.querySelector('.submit')
+var resetButton = document.querySelector('.reset')
 var recentGuess = document.querySelector('.recent-guess')
 var lowerRange = document.querySelector('.lower-range')
 var upperRange = document.querySelector('.upper-range')
 var instructions = document.querySelector('.instructions')
+var recentGuessLabel = document.querySelector('.recent-guess-label')
 var randomNumber = Math.ceil(Math.random() * 100)
 var guessResponse = document.querySelector('.response')
 
@@ -11,8 +13,10 @@ console.log('random number', randomNumber)
 
 guessInput.addEventListener('keyup', enableButtons)
 submitButton.addEventListener('click', submitGuess)
+resetButton.addEventListener('click', resetGame)
 
 function enableButtons(e) {
+  resetButton.disabled = false
   if (isNaN(guessInput.value)) {
     alert('Please input a number.')
     guessInput.value = ''
@@ -25,6 +29,8 @@ function submitGuess(e) {
   e.preventDefault()
   checkInputRange()
   checkUserGuess()
+  recentGuessLabel.classList.add('visible')
+  recentGuess.classList.add('visible')
 }
 
 function checkInputRange() {
@@ -69,4 +75,15 @@ function guessIsCorrect() {
   instructions.innerText = "Wow!  Amazing!"
   guessInput.value = ''
   submitButton.disabled = true
+}
+
+function resetGame() {
+  lowerRange = 1
+  upperRange = 100
+  recentGuess = '--'
+  response = ''
+  randomNumber = Math.ceil(Math.random() * 100)
+  submitButton.disabled = true
+  recentGuess = ''
+  recentGuessLabel.classList.add('hidden')
 }
